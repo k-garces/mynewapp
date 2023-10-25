@@ -24,18 +24,17 @@ export class CourseComponent implements OnInit {
   getAverageCredits () {
     let sum = 0;
     console.log("iniciando")
-        
-    for (let index = 0; index < this.courses.length; index++) { 
+
+    for (let index = 0; index < this.courses.length; index++) {
        sum += this.courses[index].credits;
        console.log(sum)
     }
-    this.average = sum; // / this.courses.length;
-    console.log("terminando")
+
+    return sum/this.courses.length;
   }
 
   ngOnInit() {
     this.getCourses();
-    this.getAverageCredits();
   }
 
 }
